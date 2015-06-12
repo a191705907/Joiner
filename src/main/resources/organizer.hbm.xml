@@ -3,30 +3,25 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="joiner.entity">
-    <class name="Activity" table="activity">
-        <id name="activityId" column="activity_id">
+    <class name="Organizer" table="organizer">
+        <id name="organizerId" column="organizer_id">
             <generator class="identity"/>
         </id>
-        <property name="activityName" column="activity_name"></property>
-        <component name="organizer">
-            <property
-                    name="organizerName"
-                    column="organizer_name">
-            </property>
-        </component>
+        <property name="organizerName" column="organizer_name"></property>
+        <property name="orgaizerPassword" column="organizer_password"></property>
         <set
-                name="students"
+                name="activities"
                 table="student_activity"
                 lazy="false"
                 cascade="save-update"
                 >
             <key
-                    column="activity_id"
+                    column="student_id"
                     >
             </key>
             <many-to-many
-                    class="joiner.entity.Student"
-                    column="student_id"
+                    class="joiner.entity.Activity"
+                    column="activity_id"
                     outer-join="auto"/>
         </set>
     </class>
