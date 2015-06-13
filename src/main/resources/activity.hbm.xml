@@ -14,20 +14,20 @@
                     column="organizer_name">
             </property>
         </component>
-        <set
-                name="students"
-                table="student_activity"
-                lazy="false"
-                cascade="save-update"
-                >
-            <key
-                    column="activity_id"
-                    >
-            </key>
-            <many-to-many
-                    class="joiner.entity.Student"
-                    column="student_id"
-                    outer-join="auto"/>
-        </set>
+        <!--<set-->
+                <!--name="students"-->
+                <!--table="student_activity"-->
+                <!--lazy="false"-->
+                <!--cascade="save-update"-->
+                <!-->-->
+            <!--<key-->
+                    <!--column="activity_id"-->
+                    <!-->-->
+            <!--</key>-->
+            <!--<many-to-many-->
+                    <!--class="joiner.entity.Student"-->
+                    <!--column="student_id"-->
+                    <!--outer-join="auto"/>-->
+        <!--</set>-->
     </class>
 </hibernate-mapping>

@@ -1,15 +1,13 @@
 package joiner.entity;
 
-import java.util.List;
-
 /**
  * Created by distanceN on 2015/6/13.
  */
 public class Activity {
     String activityId;
     String activityName;
-    String organizerId;
-    List<Student> students;
+    Organizer organizer;
+//    List<Student> students;
 
     public String getActivityId() {
         return activityId;
@@ -19,12 +17,12 @@ public class Activity {
         return activityName;
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
+//    public List<Student> getStudents() {
+//        return students;
+//    }
 
-    public String getOrganizerId() {
-        return organizerId;
+    public Organizer getOrganizer() {
+        return organizer;
     }
 
     public void setActivityId(String activityId) {
@@ -35,11 +33,11 @@ public class Activity {
         this.activityName = activityName;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
+//    public void setStudents(List<Student> students) {
+//        this.students = students;
+//    }
 
-    public void setOrganizerId(String organizerId) {
-        this.organizerId = organizerId;
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
     }
 }

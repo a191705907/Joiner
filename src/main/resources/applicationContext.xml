@@ -18,7 +18,11 @@
             <ref bean="dataSource"/>
         </property>
         <property name="mappingLocations">
-            <value>user.hbm.xml</value>
+            <list>
+                <value>student.hbm.xml</value>
+                <value>activity.hbm.xml</value>
+                <value>organizer.hbm.xml</value>
+            </list>
         </property>
         <property name="hibernateProperties">
             <props>
@@ -48,14 +52,14 @@
             </props>
         </property>
     </bean>
-    <bean id="userDAO" class="Feiz.dao.impl.UserDaoImpl">
+    <bean id="studentDao" class="joiner.dao.impl.StudentDaoImpl">
         <property name="hibernateTemplate">
             <ref bean="hibernateTemplate"/>
         </property>
     </bean>
-    <bean id="userService" class="Feiz.service.impl.UserServiceImpl">
-        <property name="userDao">
-            <ref bean="userDAO"/>
+    <bean id="studentService" class="joiner.service.impl.StudentServiceImpl">
+        <property name="studentDao">
+            <ref bean="studentDao"/>
         </property>
     </bean>
 </beans>

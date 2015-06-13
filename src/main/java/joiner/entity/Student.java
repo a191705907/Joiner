@@ -1,7 +1,5 @@
 package joiner.entity;
 
-import java.util.List;
-
 /**
  * Created by distanceN on 2015/6/13.
  */
@@ -9,7 +7,7 @@ public class Student {
     String studentId;
     String studentName;
     String studentPassword;
-    List<Activity> activities;
+//    List<Activity> activities;
 
     public String getStudentId() {
         return studentId;
@@ -23,9 +21,9 @@ public class Student {
         return studentPassword;
     }
 
-    public List<Activity> getActivities() {
-        return activities;
-    }
+//    public List<Activity> getActivities() {
+//        return activities;
+//    }
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
@@ -39,7 +37,7 @@ public class Student {
         this.studentPassword = studentPassword;
     }
 
-    public void setActivities(List<Activity> activities) {
-        this.activities = activities;
-    }
+//    public void setActivities(List<Activity> activities) {
+//        this.activities = activities;
+//    }
 }

@@ -7,6 +7,7 @@ public class Organizer {
     String organizerId;
     String organizerName;
     String orgaizerPassword;
+//    List<Activity> activities;
 
     public String getOrganizerId() {
         return organizerId;
@@ -20,6 +21,10 @@ public class Organizer {
         return orgaizerPassword;
     }
 
+//    public List<Activity> getActivities() {
+//        return activities;
+//    }
+
     public void setOrganizerId(String organizerId) {
         this.organizerId = organizerId;
     }
@@ -31,4 +36,8 @@ public class Organizer {
     public void setOrgaizerPassword(String orgaizerPassword) {
         this.orgaizerPassword = orgaizerPassword;
     }
+
+//    public void setActivities(List<Activity> activities) {
+//        this.activities = activities;
+//    }
 }

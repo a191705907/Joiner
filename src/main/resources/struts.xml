@@ -10,7 +10,7 @@
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
-        <action name="login" class="Feiz.action.UserLoginAction">
+        <action name="login" class="joiner.action.StudentLoginAction">
             <!-- 定义三个逻辑视图和物理资源之间的映射 -->
             <result name="input">/try.html</result>
             <result name="error">/error.jsp</result>

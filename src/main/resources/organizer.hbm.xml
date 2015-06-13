@@ -9,20 +9,20 @@
         </id>
         <property name="organizerName" column="organizer_name"></property>
         <property name="orgaizerPassword" column="organizer_password"></property>
-        <set
-                name="activities"
-                table="student_activity"
-                lazy="false"
-                cascade="save-update"
-                >
-            <key
-                    column="student_id"
-                    >
-            </key>
-            <many-to-many
-                    class="joiner.entity.Activity"
-                    column="activity_id"
-                    outer-join="auto"/>
-        </set>
+        <!--<set-->
+                <!--name="activities"-->
+                <!--table="student_activity"-->
+                <!--lazy="false"-->
+                <!--cascade="save-update"-->
+                <!-->-->
+            <!--<key-->
+                    <!--column="student_id"-->
+                    <!-->-->
+            <!--</key>-->
+            <!--<many-to-many-->
+                    <!--class="joiner.entity.Activity"-->
+                    <!--column="activity_id"-->
+                    <!--outer-join="auto"/>-->
+        <!--</set>-->
     </class>
 </hibernate-mapping>
