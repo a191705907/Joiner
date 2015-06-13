@@ -72,4 +72,14 @@
             <ref bean="organizerDao"/>
         </property>
     </bean>
+    <bean id="activityDao" class="joiner.dao.impl.ActivityDaoImpl">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+    <bean id="activityService" class="joiner.service.impl.ActivityServiceImpl">
+        <property name="activityDao">
+            <ref bean="activityDao"/>
+        </property>
+    </bean>
 </beans>

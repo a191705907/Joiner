@@ -10,7 +10,10 @@ VALUES ('class_dmt', 123),
        ('class3', 123);
 
 INSERT INTO activity (activity_name, organizer_name)
-VALUES ('class_party', 'class3');
+VALUES ('class_study', 'class_dmt'),
+       ('courses_review', 'class_dmt'),
+       ('class_party', 'class_dmt'),
+       ('class_party', 'class3');
 
 INSERT INTO student_activity (activity_id, student_id)
 VALUES (1, 12330129),
