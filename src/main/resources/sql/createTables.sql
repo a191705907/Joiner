@@ -1,3 +1,5 @@
+USE test;
+
 CREATE TABLE student(
   student_id varchar(8) not null,
   student_name varchar(45) not null,
