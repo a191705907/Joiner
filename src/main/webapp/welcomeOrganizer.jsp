@@ -11,13 +11,13 @@
 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>Hello</title>
+  <title>Hello Organizer</title>
 </head>
 <body>
 <h2>Welcome</h2>
 
-<s:if test="#session.student!=null">
-  <h2>Hello <s:property value="#session.student.studentName"/></h2>
+<s:if test="#session.organizer!=null">
+  <h2>Hello <s:property value="#session.organizer.organizerName"/></h2>
 </s:if>
 
 </body>

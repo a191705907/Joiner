@@ -10,11 +10,22 @@
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
-        <action name="login" class="joiner.action.StudentLoginAction">
-            <!-- 定义三个逻辑视图和物理资源之间的映射 -->
-            <result name="input">/try.html</result>
+        <action name="I_am_student" class="joiner.action.ToLoginAsStudentAction">
+            <result name="success">/forStudentLogin.html</result>
+        </action>
+        <action name="I_am_organizer" class="joiner.action.ToLoginAsOrganizerAction">
+            <result name="success">/forOrganizerLogin.html</result>
+        </action>
+
+        <action name="student_login" class="joiner.action.StudentLoginAction">
+            <result name="input">/forStudentLogin.html</result>
             <result name="error">/error.jsp</result>
-            <result name="success">/welcome.jsp</result>
+            <result name="success">/welcomeStudent.jsp</result>
+        </action>
+        <action name="organizer_login" class="joiner.action.OrganizerLoginAction">
+            <result name="input">/forOrganizerLogin.html</result>
+            <result name="error">/error.jsp</result>
+            <result name="success">/welcomeOrganizer.jsp</result>
         </action>
     </package>
 </struts>

@@ -11,7 +11,7 @@
 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>Hello</title>
+  <title>Hello Student</title>
 </head>
 <body>
 <h2>Welcome</h2>

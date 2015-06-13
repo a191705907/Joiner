@@ -8,7 +8,7 @@
             <generator class="identity"/>
         </id>
         <property name="organizerName" column="organizer_name"></property>
-        <property name="orgaizerPassword" column="organizer_password"></property>
+        <property name="organizerPassword" column="organizer_password"></property>
         <!--<set-->
                 <!--name="activities"-->
                 <!--table="student_activity"-->

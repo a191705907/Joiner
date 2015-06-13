@@ -6,7 +6,7 @@ package joiner.entity;
 public class Organizer {
     String organizerId;
     String organizerName;
-    String orgaizerPassword;
+    String organizerPassword;
 //    List<Activity> activities;
 
     public String getOrganizerId() {
@@ -17,8 +17,8 @@ public class Organizer {
         return organizerName;
     }
 
-    public String getOrgaizerPassword() {
-        return orgaizerPassword;
+    public String getOrganizerPassword() {
+        return organizerPassword;
     }
 
 //    public List<Activity> getActivities() {
@@ -33,8 +33,8 @@ public class Organizer {
         this.organizerName = organizerName;
     }
 
-    public void setOrgaizerPassword(String orgaizerPassword) {
-        this.orgaizerPassword = orgaizerPassword;
+    public void setOrganizerPassword(String organizerPassword) {
+        this.organizerPassword = organizerPassword;
     }
 
 //    public void setActivities(List<Activity> activities) {

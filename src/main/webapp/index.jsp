@@ -15,7 +15,7 @@
 </head>
 <body>
 <s:form action="login" validate="true">
-    <s:textfield label="User Name" name="student.studentName" required="true"/>
+    <s:textfield label="User Id" name="student.studentId" required="true"/>
     <s:password label="Password" name="student.studentPassword" required="true"/>
     <s:property/>
     <s:submit value="login"/>

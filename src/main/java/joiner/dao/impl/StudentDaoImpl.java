@@ -20,7 +20,7 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao {
                 getHibernateTemplate().save(student);
                 success = "Student saved ok!";
             } catch (DataAccessException e) {
-                success = "Sorry, sudent can't be added.";
+                success = "Sorry, student can't be added.";
             }
         } else {
             success = "The student name has been existed!";
@@ -30,6 +30,7 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao {
 
     @Override
     public Student findStudentById(String studentId) {
+        System.out.println("Searching student by id");
         List<Student> students = getHibernateTemplate().find("from Student where studentId = ?", studentId);
         if (1 > students.size()) {
             return null;

@@ -62,4 +62,14 @@
             <ref bean="studentDao"/>
         </property>
     </bean>
+    <bean id="organizerDao" class="joiner.dao.impl.OrganizerDaoImpl">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
+    <bean id="organizerService" class="joiner.service.impl.OrganizerServiceImpl">
+        <property name="organizerDao">
+            <ref bean="organizerDao"/>
+        </property>
+    </bean>
 </beans>
