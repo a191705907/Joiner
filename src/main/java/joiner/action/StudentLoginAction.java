@@ -40,6 +40,7 @@ public class StudentLoginAction extends ActionSupport {
     public boolean isValid(String keyword) {
         return keyword != null && keyword != "";
     }
+
     public boolean studentCheck(Student student) {
         System.out.print("Inside student check, student id: ");
         System.out.println(student.getStudentId());

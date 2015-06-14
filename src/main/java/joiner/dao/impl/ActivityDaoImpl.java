@@ -12,20 +12,33 @@ import java.util.List;
  */
 public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao {
     @Override
-    public String addActivity(Activity activity) {
-        String success = "";
+    public boolean addActivity(Activity activity) {
+        boolean flag = true;
+        String organizerName = activity.getOrganizer().getOrganizerName();
         String name = activity.getActivityName();
-        if(findActivitysByName(name).size() == 0){
+        List<Activity> list = findActivitysByName(name);
+        if(list.size()!= 0) {
+            for(int i = 0; i <list.size();i++) {
+                if(list.get(i).getOrganizer().
+                        getOrganizerName().equals(organizerName)){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if(flag){
             try {
                 getHibernateTemplate().save(activity);
-                success = "Activity saved ok!";
+                System.out.println("Activity saved ok!");
             } catch (DataAccessException e) {
-                success = "Sorry, activity can't be added.";
+                System.out.println("Sorry, activity can't be added.");
+                return false;
             }
         } else {
-            success = "The activity name has been existed!";
+            System.out.println("The activity name has been existed!");
+            return false;
         }
-        return success;
+        return true;
     }
 
     @Override

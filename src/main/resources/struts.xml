@@ -27,7 +27,11 @@
             <result name="error">/error.jsp</result>
             <result name="success">/welcomeOrganizer.jsp</result>
         </action>
-        
+        <action name = "create_activity" class = "joiner.action.CreateActivityAction">
+            <result name="input">/create_event.html</result>
+            <result name="error">/error.jsp</result>
+            <result name="success">/index.html</result>
+        </action>
         <action name="search_activity" class="joiner.action.SearchActivityAction">
             <result name="input">/index.html</result>
             <result name="success">/activityInformation.jsp</result>

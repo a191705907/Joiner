@@ -21,7 +21,7 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public String addActivity(Activity activity) {
+    public boolean addActivity(Activity activity) {
         return activityDao.addActivity(activity);
     }
 
