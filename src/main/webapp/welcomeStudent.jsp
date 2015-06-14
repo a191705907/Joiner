@@ -16,9 +16,9 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <body>
 <h2>Welcome</h2>
 
-<s:if test="#session.student!=null">
-  <h2>Hello <s:property value="#session.student.studentName"/></h2>
-</s:if>
+    <s:if test="#session.student!=null">
+        <h2>Hello <s:property value="#session.student.studentName"/></h2>
+    </s:if>
 
 </body>
 </html>

@@ -36,5 +36,9 @@
         <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
             <result name="success">/scanActivities.jsp</result>
         </action>
+
+        <action name="activity_detail" class="joiner.action.ActivityDetailAction">
+            <result name="success">/activityDetail.jsp</result>
+        </action>
     </package>
 </struts>
