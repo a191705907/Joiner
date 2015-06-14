@@ -8,12 +8,11 @@
             <generator class="identity"/>
         </id>
         <property name="activityName" column="activity_name"></property>
-        <component name="organizer">
-            <property
-                    name="organizerName"
-                    column="organizer_name">
-            </property>
-        </component>
+        <property name="organizerName" column="organizer_name"></property>
+        <property name="time" column="activity_time"></property>
+        <property name="place" column="activity_place"></property>
+        <property name="description" column="activity_discript"></property>
+        <property name="isPost" column="activity_isPost"></property>
         <!--<set-->
                 <!--name="students"-->
                 <!--table="student_activity"-->
