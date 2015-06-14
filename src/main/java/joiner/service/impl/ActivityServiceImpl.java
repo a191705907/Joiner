@@ -21,7 +21,7 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public String addActivity(Activity activity) {
+    public boolean addActivity(Activity activity) {
         return activityDao.addActivity(activity);
     }
 
@@ -38,5 +38,14 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public List<Activity> listAll() {
         return activityDao.listAll();
+    }
+
+    @Override
+    public List<Activity> findActivitysByOrganizer(String organizerName) {
+        return activityDao.findActivitysByOrganizer(organizerName);
+    }
+    @Override
+    public boolean joinedByStudent(String studentId) {
+        return activityDao.joinedByStudent(studentId);
     }
 }

@@ -50,7 +50,7 @@ public class ActivityDetailAction extends ActionSupport {
         if (checkActivity.getActivityId().equals(activity.getActivityId())) {
             activity.setActivityName(checkActivity.getActivityName());
             activity.setActivityId(checkActivity.getActivityId());
-            activity.setOrganizer(checkActivity.getOrganizer());
+            activity.setOrganizerName(checkActivity.getOrganizerName());
             System.out.println("Activity id correct!");
             return true;
         }

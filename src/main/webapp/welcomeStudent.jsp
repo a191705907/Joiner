@@ -32,12 +32,16 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
     <s:if test="#session.activityList!=null">
         <s:iterator value="#session.activityList" id="activity">
-            <form name="activity_detail" method="post" action="activity_detail" validate="true">
+            <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
                 <p>
                     <h4>activity name: <s:property value="#activity.activityName"/></h4>
-                    <h4>  organizer: <s:property value="#activity.organizer.organizerName"/></h4>
-                    <input type="hidden" value=${activity.activityId} name="activity.activityId">
-                    <input type="Submit" value="see detail for activity">
+                    <h4>organizer: <s:property value="#activity.organizerName"/></h4>
+                    <h4>time: <s:property value="#activity.time" /></h4>
+                    <h4>place: <s:property value="#activity.place" /></h4>
+                    <%--REMEMBER: here text should be hidden at last--%>
+                    <input type="text" value=${activity.activityId} name="activity.activityId"/>
+                    <input type="text" value=${student.studentId} name="student.studentId"/>
+                    <input type="Submit" value="see detail for activity"/>
                 </p>
             </form>
         </s:iterator>

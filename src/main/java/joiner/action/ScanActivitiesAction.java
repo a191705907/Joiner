@@ -28,7 +28,7 @@ public class ScanActivitiesAction extends ActionSupport {
         for (Activity a : activityList) {
             System.out.println("id: " + a.getActivityId());
             System.out.println("name: " + a.getActivityName());
-            System.out.println("organizer: " + a.getOrganizer().getOrganizerName());
+            System.out.println("organizer: " + a.getOrganizerName());
             System.out.println();
         }
         return SUCCESS;
