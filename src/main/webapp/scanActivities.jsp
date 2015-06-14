@@ -14,16 +14,11 @@
 <body>
     <s:if test="#session.activityList!=null">
         <s:iterator value="#session.activityList" id="activity">
-            <%--<s:form>--%>
-                <%--<h4>activity name: <s:property value="#activity.activityName"/></h4>--%>
-                <%--<h4>organizer: <s:property value="#activity.organizer.organizerName"/></h4>--%>
-                <%----%>
-            <%--</s:form>--%>
             <form name="activity_detail" method="post" action="activity_detail" validate="true">
                 <p>
                     <h4>activity name: <s:property value="#activity.activityName"/></h4>
                     <h4>  organizer: <s:property value="#activity.organizer.organizerName"/></h4>
-                    <input type="hidden" value=${activity.activityId} name="activity.activityId">
+                    <input type="text" value=${activity.activityId} name="activity.activityId">
                     <input type="Submit" value="see detail for activity">
                 </p>
             </form>

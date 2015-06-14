@@ -14,7 +14,7 @@ public class ActivityDetailAction extends ActionSupport {
     private ActivityService activityService;
     private Activity activity;
     public ActivityDetailAction() {
-        System.out.println("ActivityLoginAction constructing");
+        System.out.println("ActivityDetailAction constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
         activityService = (ActivityService) context.getBean("activityService");
     }
