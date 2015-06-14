@@ -14,12 +14,12 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
     @Override
     public boolean addActivity(Activity activity) {
         boolean flag = true;
-        String organizerName = activity.getOrganizer().getOrganizerName();
+        String organizerName = activity.getOrganizerName();
         String name = activity.getActivityName();
         List<Activity> list = findActivitysByName(name);
         if(list.size()!= 0) {
             for(int i = 0; i <list.size();i++) {
-                if(list.get(i).getOrganizer().
+                if(list.get(i).
                         getOrganizerName().equals(organizerName)){
                     flag = false;
                     break;
