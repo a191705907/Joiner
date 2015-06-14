@@ -32,5 +32,9 @@
             <result name="input">/index.html</result>
             <result name="success">/activityInformation.jsp</result>
         </action>
+
+        <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
+            <result name="success">/scanActivities.jsp</result>
+        </action>
     </package>
 </struts>

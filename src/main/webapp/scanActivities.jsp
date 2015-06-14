@@ -2,14 +2,14 @@
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2015/6/14
-  Time: 0:52
+  Time: 11:04
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-    <title>activity information</title>
+    <title>scan activities</title>
 </head>
 <body>
     <s:if test="#session.activityList!=null">
