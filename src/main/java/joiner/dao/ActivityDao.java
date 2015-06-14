@@ -11,5 +11,6 @@ public interface ActivityDao {
     public boolean addActivity(Activity activity);
     public Activity findActivityById(String activityId);
     public List<Activity> findActivitysByName(String activityName);
+    public List<Activity> findActivitysByOrganizer(String organizerName);
     public List<Activity> listAll();
 }

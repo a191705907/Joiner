@@ -12,4 +12,5 @@ public interface ActivityService {
     public Activity findActivityById(String activityId);
     public List<Activity> findActivitysByName(String activityName);
     public List<Activity> listAll();
+    public List<Activity> findActivitysByOrganizer(String organizerName);
 }

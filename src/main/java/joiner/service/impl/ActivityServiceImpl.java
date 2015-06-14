@@ -39,4 +39,9 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> listAll() {
         return activityDao.listAll();
     }
+
+    @Override
+    public List<Activity> findActivitysByOrganizer(String organizerName) {
+        return activityDao.findActivitysByOrganizer(organizerName);
+    }
 }

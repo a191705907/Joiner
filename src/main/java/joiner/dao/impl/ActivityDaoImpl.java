@@ -11,6 +11,7 @@ import java.util.List;
  * Created by distanceN on 2015/6/14.
  */
 public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao {
+
     @Override
     public boolean addActivity(Activity activity) {
         boolean flag = true;
@@ -55,6 +56,11 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
     @Override
     public List<Activity> findActivitysByName(String activityName) {
         return getHibernateTemplate().find("from Activity where activityName = ?", activityName);
+    }
+
+    @Override
+    public List<Activity> findActivitysByOrganizer(String organizerName) {
+        return getHibernateTemplate().find("from Activity where organizerName = ?", organizerName);
     }
 
     @Override

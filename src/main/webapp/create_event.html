@@ -94,7 +94,18 @@
                 Create
             </div>
             <div class="cut-line"></div>
-            <div class="items" onclick="location.href='#'">Item1</div>
+            <form name="activityDetailForOrg" method="post" action="activityDetailForOrg" validate="true">
+                <label>
+                    <input type="text" name="organizer.organizerName" value="class_dmt">
+                </label>
+                <label>
+                    <input type="text" name="organizer.organizerId" value="1">
+                </label>
+                <label>
+                    <input type="text" name="organizer.organizerPassword" value="123">
+                </label>
+                <input type="Submit" value="Item1">
+            </form>
             <div class="items" onclick="location.href='#'">Item2</div>
             <div class="items" onclick="location.href='#'">Item3</div>
             <div class="items" onclick="location.href='#'">Item4</div>

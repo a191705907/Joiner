@@ -3,9 +3,13 @@ package joiner.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import joiner.entity.Activity;
+import joiner.entity.Organizer;
 import joiner.service.ActivityService;
+import joiner.service.OrganizerService;
 import joiner.util.InitApplicationContext;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 /**
  * Created by Feiz on 2015/6/14.
@@ -13,49 +17,28 @@ import org.springframework.context.ApplicationContext;
 public class ActivityDetailActionForOrg extends ActionSupport {
     private ActivityService activityService;
     private Activity activity;
+    private Organizer organizer;
+    private OrganizerService organizerService;
     public ActivityDetailActionForOrg() {
         System.out.println("ActivityDetailActionForOrg constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
         activityService = (ActivityService) context.getBean("activityService");
+        organizerService=(OrganizerService) context.getBean("organizerService");
     }
     @Override
     public String execute() throws Exception {
-        System.out.println(activity.getActivityId());
-        if (!isValid(activity.getActivityId())) {
-            System.out.println("ERROR in get activity id");
+        System.out.println("Begin");
+        if (!isValid(organizer.getOrganizerName())) {
+            System.out.println("ERROR in get organizer name");
             return INPUT;
         }
-        if(!activityCheck(activity)){
-            System.out.println("ERROR in check activity");
-            return ERROR;
-        }
+        List<Activity> activityList = activityService.findActivitysByOrganizer(organizer.getOrganizerName());
         System.out.println("SUCCESS");
-        ActionContext.getContext().getSession().put("activity" , activity);
+        ActionContext.getContext().getSession().put("activityList" , activityList);
         return SUCCESS;
     }
     public boolean isValid(String keyword) {
         return keyword != null && keyword != "";
-    }
-    public boolean activityCheck(Activity activity) {
-        System.out.print("Inside activity check, activity id: ");
-        System.out.println(activity.getActivityId());
-        Activity checkActivity = activityService.findActivityById(activity.getActivityId());
-        if (checkActivity == null) {
-            System.out.println("No such activity with activity id: "
-                    + activity.getActivityId());
-            return false;
-        }
-        System.out.println("Activity name: " + checkActivity.getActivityName()
-                + "\nActivity Id: " + checkActivity.getActivityId());
-        if (checkActivity.getActivityId().equals(activity.getActivityId())) {
-            activity.setActivityName(checkActivity.getActivityName());
-            activity.setActivityId(checkActivity.getActivityId());
-            activity.setOrganizerName(checkActivity.getOrganizerName());
-            System.out.println("Activity id correct!");
-            return true;
-        }
-        System.out.println("Activity id is wrong, please check!");
-        return false;
     }
 
     public ActivityService getActivityService() {
@@ -73,4 +56,10 @@ public class ActivityDetailActionForOrg extends ActionSupport {
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
+    }
+
+    public Organizer getOrganizer(){return organizer;}
 }

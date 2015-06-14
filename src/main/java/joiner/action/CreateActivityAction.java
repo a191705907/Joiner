@@ -20,7 +20,7 @@ public class CreateActivityAction extends ActionSupport{
     }
     @Override
     public String execute() throws Exception {
-        String organizer = activity.getOrganizer().getOrganizerName();
+        String organizer = activity.getOrganizerName();
         System.out.println(organizer);
         if(!isValid(organizer)|| !isValid(activity.getActivityName())){
             System.out.println("organizer name or activity name is not valid");
