@@ -13,4 +13,5 @@ public interface ActivityService {
     public List<Activity> findActivitysByName(String activityName);
     public List<Activity> listAll();
     public List<Activity> findActivitysByOrganizer(String organizerName);
+    public boolean joinedByStudent(String studentId);
 }

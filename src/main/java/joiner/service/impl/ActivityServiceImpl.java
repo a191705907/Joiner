@@ -44,4 +44,8 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findActivitysByOrganizer(String organizerName) {
         return activityDao.findActivitysByOrganizer(organizerName);
     }
+    @Override
+    public boolean joinedByStudent(String studentId) {
+        return activityDao.joinedByStudent(studentId);
+    }
 }
