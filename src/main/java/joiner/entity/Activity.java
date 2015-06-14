@@ -10,7 +10,7 @@ public class Activity {
     String time;
     String place;
     String description;
-    int isPost;
+    boolean isPost;
 //    List<Student> students;
 
     public String getActivityId() {
@@ -57,7 +57,7 @@ public class Activity {
 
     public String getDescription(){return this.description;}
 
-    public void setIsPost(int isPost){this.isPost = isPost;}
+    public void setIsPost(boolean isPost){this.isPost = isPost;}
 
-    public int getIsPost(){return this.isPost;}
+    public boolean getIsPost(){return this.isPost;}
 }
