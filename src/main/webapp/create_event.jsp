@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -87,6 +89,9 @@
 <div>
     <div class="container">
         <div class="left">
+            <s:if test="#session.organizer!=null">
+                <div class="items"><s:property value="#session.organizer.organizerName"/></div>
+            </s:if>
             <div class="img">
                 <img src="">
             </div>
@@ -94,26 +99,14 @@
                 Create
             </div>
             <div class="cut-line"></div>
-            <form name="activityDetailForOrg" method="post" action="activityDetailForOrg" validate="true">
-                <label>
-                    <input type="text" name="organizer.organizerName" value="class_dmt">
-                </label>
-                <label>
-                    <input type="text" name="organizer.organizerId" value="1">
-                </label>
-                <label>
-                    <input type="text" name="organizer.organizerPassword" value="123">
-                </label>
-                <input type="Submit" value="Item1">
-            </form>
-            <div class="items" onclick="location.href='#'">Item2</div>
-            <div class="items" onclick="location.href='#'">Item3</div>
-            <div class="items" onclick="location.href='#'">Item4</div>
-            <div class="items" onclick="location.href='#'">Item5</div>
-            <div class="items" onclick="location.href='#'">Item6</div>
-            <div class="items" onclick="location.href='#'">Item7</div>
-            <div class="items" onclick="location.href='#'">Item8</div>
-            <div class="items" onclick="location.href='#'">Item9</div>
+            <s:if test="#session.activityList!=null">
+                <s:iterator value="#session.activityList" id="activity">
+                    <form action="activityInformation" method="post" name="activityInformation" validate="true">
+                        <input type="hidden" name="activity.activityId" value="<s:property value="#activity.activityId"/>">
+                        <input class="items" type="submit" value="<s:property value="#activity.activityName"/>">
+                    </form>
+                </s:iterator>
+            </s:if>
 
         </div>
         <div class="right">
@@ -129,8 +122,6 @@
 
                 <p>Event detial:</p>
                 <textarea type="text" style="width: 800px; height: 100px;"> </textarea>
-
-
                 <p>
                     <input type="Submit" value="Submit">
                 </p>

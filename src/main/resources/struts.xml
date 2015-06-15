@@ -25,16 +25,16 @@
         <action name="organizer_login" class="joiner.action.OrganizerLoginAction">
             <result name="input">/forOrganizerLogin.html</result>
             <result name="error">/error.jsp</result>
-            <result name="success">/welcomeOrganizer.jsp</result>
+            <result name="success">/create_event.jsp</result>
         </action>
         <action name = "create_activity" class = "joiner.action.CreateActivityAction">
-            <result name="input">/create_event.html</result>
+            <result name="input">/create_event.jsp</result>
             <result name="error">/error.jsp</result>
             <result name="success">/index.html</result>
         </action>
         <action name="search_activity" class="joiner.action.SearchActivityAction">
             <result name="input">/index.html</result>
-            <result name="success">/activityInformation.jsp</result>
+            <result name="success">/error.jsp</result>
         </action>
         <action name="activityDetailForOrg" class="joiner.action.ActivityDetailActionForOrg">
             <result name="success">/activityDetailForOrg.jsp</result>
@@ -42,6 +42,9 @@
         </action>
         <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
             <result name="success">/scanActivities.jsp</result>
+        </action>
+        <action name="activityInformation" class="joiner.action.ActivityDetailActionForOrg">
+            <result name="success">/activityInformation.jsp</result>
         </action>
     </package>
 </struts>
