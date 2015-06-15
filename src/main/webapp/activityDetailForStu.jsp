@@ -37,9 +37,10 @@
             <p>
                 <input type="text" value=${session.student.studentId} name="student.studentId">
                 <input type="text" value=${session.student.studentPassword} name="student.studentPassword">
-                <input type="text" value=${session.activity.activityId} name="activity.activityId>
+                <input type="text" value=${session.activity.activityId} name="activity.activityId">
+                <input type="text" value=${session.student.studentId} name="link.studentId">
+                <input type="text" value=${session.activity.activityId} name="link.activityId">
             </p>
-            <button type="button">no use button</button>
             <p>
                 <input type="Submit" value="Join it">
             </p>

@@ -11,5 +11,5 @@ public interface LinkDao {
     public List<Link> listAll();
     public List<Link> findStudentsByActivity(String activityId);
     public List<Link> findActivitiesByStudent(String studentId);
-//    public Lis
+    public boolean makeJoin(Link link);
 }

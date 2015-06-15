@@ -70,21 +70,4 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
         return getHibernateTemplate().find("from Activity");
     }
 
-//    @Override
-//    public boolean joinedByStudent(String studentId) {
-//        return true;
-//    }
-
-
-    // below are add for link of student and activity
-//    public boolean makeJoin(String studentId, String activityId) {
-//        Session session = getSessionFactory().getCurrentSession();
-//        session.beginTransaction();
-//
-//        Student studentJoining = (Student) session.load(Student.class, studentId);
-//        Activity activityJoined = (Activity) session.load(Activity.class, activityId);
-//
-//        activityJoined.getStudents().add(studentJoining);
-//        return true;
-//    }
 }
