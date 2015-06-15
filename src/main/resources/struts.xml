@@ -49,5 +49,9 @@
             <result name="success">/successForJoin.jsp</result>
             <result name="error">/errorForJoin.jsp</result>
         </action>
+
+        <action name="see_joined" class="joiner.action.SeeJoinedAction">
+            <result name="success">/joinedActivities.jsp</result>
+        </action>
     </package>
 </struts>

@@ -11,18 +11,20 @@ import joiner.service.StudentService;
 import joiner.util.InitApplicationContext;
 import org.springframework.context.ApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Created by distanceN on 2015/6/15.
+ * Created by distanceN on 2015/6/16.
  */
-public class JoinAction extends ActionSupport {
+public class SeeJoinedAction extends ActionSupport {
     private StudentService studentService;
-    private Student student;
+    private Student student1;
     private ActivityService activityService;
     private Activity activity;
     private LinkService linkService;
-    private Link link;
-    public JoinAction() {
-        System.out.println("StudentLoginAction constructing");
+    public SeeJoinedAction() {
+        System.out.println("SeeJoinedAction constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
         System.out.println("Context ok");
         studentService = (StudentService) context.getBean("studentService");
@@ -31,23 +33,25 @@ public class JoinAction extends ActionSupport {
     }
     @Override
     public String execute() throws Exception {
-        System.out.println(student.getStudentName());
-        if (!isValid(student.getStudentId())) {
-            System.out.println("ERROR in get student name");
-            return INPUT;
+        if (student1 == null) {
+            System.out.println("student is null");
         }
-        if (!isValid(student.getStudentPassword())) {
-            System.out.println("ERROR2 in get student password");
+        System.out.println(student1.getStudentId());
+        if (!isValid(student1.getStudentId())) {
+            System.out.println("ERROR in get student id");
             return INPUT;
         }
 
-        if (linkService.makeJoin(link)) {
-            System.out.println("SUCCESS");
-            ActionContext.getContext().getSession().put("student" , student);
-            return SUCCESS;
-        } else {
-            return ERROR;
+        System.out.println("SUCCESS");
+        ActionContext.getContext().getSession().put("student" , student1);
+
+        List<Link> links = linkService.findActivitiesByStudent(student1.getStudentId());
+        List<Activity> activityList = new ArrayList<Activity>();
+        for (Link link : links) {
+            activityList.add(activityService.findActivityById(link.getActivityId()));
         }
+        ActionContext.getContext().getSession().put("activityList2", activityList);
+        return SUCCESS;
     }
     public boolean isValid(String keyword) {
         return keyword != null && keyword != "";
@@ -57,8 +61,8 @@ public class JoinAction extends ActionSupport {
         return studentService;
     }
 
-    public Student getStudent() {
-        return student;
+    public Student getStudent1() {
+        return student1;
     }
 
     public ActivityService getActivityService() {
@@ -73,8 +77,8 @@ public class JoinAction extends ActionSupport {
         this.studentService = studentService;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudent1(Student student) {
+        this.student1 = student;
     }
 
     public void setActivityService(ActivityService activityService) {
@@ -89,15 +93,7 @@ public class JoinAction extends ActionSupport {
         return linkService;
     }
 
-    public Link getLink() {
-        return link;
-    }
-
     public void setLinkService(LinkService linkService) {
         this.linkService = linkService;
-    }
-
-    public void setLink(Link link) {
-        this.link = link;
     }
 }

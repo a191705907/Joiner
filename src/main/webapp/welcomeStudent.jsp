@@ -18,9 +18,11 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <h2><s:property value="#session.student.studentName"/></h2>
         <h3><s:property value="#session.student.studentId" /></h3>
         <%--<h3><s:property value="#session.student.studentPhone" /></h3>--%>
-        <form name="joined_activities" method="post" action="joined_activities" validate="true">
-            <input type="hidden" value=${session.student.studentId} />
-            <input type="Submit" value="My joins" />
+        <form name="see_joined" method="post" action="see_joined" validate="true">
+            <input type="text" value=${student.studentId} name="student1.studentId"/>
+            <input type="text" value=${student.studentName} name="student1.studentName"/>
+            <input type="text" value=${student.studentPassword} name="student1.studentPassword"/>
+            <input type="Submit" value="My Joins" />
         </form>
     </s:if>
     <form name="search_activity" method="post" action="search_activity" validate="true">
