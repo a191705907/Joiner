@@ -4,10 +4,9 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="joiner.entity">
     <class name="Link" table="student_activity">
-        <id name="linkId" >
-            <generator class="identity"/>
-        </id>
-        <property name="activityId" column="activity_id"></property>
-        <property name="studentId" column="student_id"></property>
+        <composite-id>
+            <key-property name="activityId" column="activity_id"/>
+            <key-property name="studentId" column="student_id"/>
+        </composite-id>
     </class>
 </hibernate-mapping>

@@ -68,6 +68,7 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
     public List<Activity> listAll() {
         return getHibernateTemplate().find("from Activity");
     }
+
     @Override
     public boolean joinedByStudent(String studentId) {
         List<Student> studentsJoined = getHibernateTemplate().find("from Link where studentId = ?", studentId);

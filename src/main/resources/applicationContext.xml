@@ -22,6 +22,7 @@
                 <value>student.hbm.xml</value>
                 <value>activity.hbm.xml</value>
                 <value>organizer.hbm.xml</value>
+                <value>link.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -67,9 +68,19 @@
             <ref bean="hibernateTemplate"/>
         </property>
     </bean>
+    <bean id="linkDao" class="joiner.dao.impl.LinkDaoImpl">
+        <property name="hibernateTemplate">
+            <ref bean="hibernateTemplate"/>
+        </property>
+    </bean>
     <bean id="organizerService" class="joiner.service.impl.OrganizerServiceImpl">
         <property name="organizerDao">
             <ref bean="organizerDao"/>
+        </property>
+    </bean>
+    <bean id="linkService" class="joiner.service.impl.LinkServiceImpl">
+        <property name="linkDao">
+            <ref bean="linkDao"/>
         </property>
     </bean>
     <bean id="activityDao" class="joiner.dao.impl.ActivityDaoImpl">

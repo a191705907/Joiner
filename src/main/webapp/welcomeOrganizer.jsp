@@ -19,7 +19,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <s:if test="#session.organizer!=null">
   <h2>Hello <s:property value="#session.organizer.organizerName"/></h2>
 </s:if>
-<form name="Redict" action="create_event.html" method="get">
+<form name="Redict" action="create_event.jsp" method="get">
   <p>
     <input type="Submit" value="create_activity">
   </p>

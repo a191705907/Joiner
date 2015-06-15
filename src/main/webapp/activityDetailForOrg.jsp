@@ -19,6 +19,7 @@
             <h4>organizer: <s:property value="#activity.organizerName"/></h4>
             <h4>organizer: <s:property value="#activity.time"/></h4>
             <h4>organizer: <s:property value="#activity.place"/></h4>
+            </form>
         </s:iterator>
     </s:if>
 </body>

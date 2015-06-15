@@ -2,21 +2,27 @@ package joiner.action;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import joiner.entity.Activity;
 import joiner.entity.Organizer;
+import joiner.service.ActivityService;
 import joiner.service.OrganizerService;
 import joiner.util.InitApplicationContext;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 /**
  * Created by distanceN on 2015/6/13.
  */
 public class OrganizerLoginAction extends ActionSupport {
+    private ActivityService activityService;
     private OrganizerService organizerService;
     private Organizer organizer;
     public OrganizerLoginAction() {
         System.out.println("OrganizerLoginAction constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
         organizerService = (OrganizerService) context.getBean("organizerService");
+        activityService = (ActivityService) context.getBean("activityService");
     }
     @Override
     public String execute() throws Exception {
@@ -34,7 +40,9 @@ public class OrganizerLoginAction extends ActionSupport {
             return ERROR;
         }
         System.out.println("SUCCESS");
+        List<Activity> activityList = activityService.findActivitysByOrganizer(organizer.getOrganizerName());
         ActionContext.getContext().getSession().put("organizer" , organizer);
+        ActionContext.getContext().getSession().put("activityList" , activityList);
         return SUCCESS;
     }
     public boolean isValid(String keyword) {

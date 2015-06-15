@@ -125,6 +125,11 @@
                     <p>Event detial:</p>
                     <input type="text" readonly="true" style="width: 800px; height: 100px;" value="<s:property value="#session.activity.description"/>"> </textarea>
             </div>
+            <s:if test="#session.studentList!=null">
+                <s:iterator value="#session.studentList" id="student">
+                    <div class="event-name"><s:property value="#student.studentId"/></div>
+                </s:iterator>
+            </s:if>
         </div>
     </div>
 </div>

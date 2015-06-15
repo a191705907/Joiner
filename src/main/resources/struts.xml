@@ -36,10 +36,6 @@
             <result name="input">/index.html</result>
             <result name="success">/error.jsp</result>
         </action>
-        <action name="activityDetailForOrg" class="joiner.action.ActivityDetailActionForOrg">
-            <result name="success">/activityDetailForOrg.jsp</result>
-            <result name="error">/error.jsp</result>
-        </action>
         <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
             <result name="success">/scanActivities.jsp</result>
         </action>
