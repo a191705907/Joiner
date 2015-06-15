@@ -13,5 +13,8 @@ public interface ActivityDao {
     public List<Activity> findActivitysByName(String activityName);
     public List<Activity> findActivitysByOrganizer(String organizerName);
     public List<Activity> listAll();
-    public boolean joinedByStudent(String studentId);
+    // public boolean joinedByStudent(String studentId);
+
+    // below are add for link of student and activity
+//    public boolean makeJoin(String studentId, String activityId);
 }

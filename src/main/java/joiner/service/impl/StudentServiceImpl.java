@@ -40,8 +40,8 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.listAll();
     }
 
-    @Override
-    public boolean joinedActivity(String activityId) {
-        return studentDao.joinedActivity(activityId);
-    }
+//    @Override
+//    public boolean joinedActivity(String activityId) {
+//        return studentDao.joinedActivity(activityId);
+//    }
 }

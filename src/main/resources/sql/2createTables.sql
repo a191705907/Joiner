@@ -33,6 +33,7 @@ CREATE TABLE activity(
 
 DROP TABLE if EXISTS student_activity;
 CREATE TABLE student_activity(
+  #link_id int(8) not null auto_increment,
   activity_id int(8) not null,
   student_id varchar(8) not null,
   primary key(activity_id, student_id)

@@ -22,6 +22,7 @@ public class StudentLoginAction extends ActionSupport {
     public StudentLoginAction() {
         System.out.println("StudentLoginAction constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
+        System.out.println("Context ok");
         studentService = (StudentService) context.getBean("studentService");
         activityService = (ActivityService) context.getBean("activityService");
     }

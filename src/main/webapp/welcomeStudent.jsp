@@ -41,6 +41,8 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                     <%--REMEMBER: here text should be hidden at last--%>
                     <input type="text" value=${activity.activityId} name="activity.activityId"/>
                     <input type="text" value=${student.studentId} name="student.studentId"/>
+                    <input type="text" value=${student.studentName} name="student.studentName"/>
+                    <input type="text" value=${student.studentPassword} name="student.studentPassword"/>
                     <input type="Submit" value="see detail for activity"/>
                 </p>
             </form>

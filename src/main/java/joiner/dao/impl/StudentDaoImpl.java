@@ -2,6 +2,7 @@ package joiner.dao.impl;
 
 import joiner.dao.StudentDao;
 import joiner.entity.Activity;
+import joiner.entity.Link;
 import joiner.entity.Student;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -50,13 +51,8 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao {
         return getHibernateTemplate().find("from Student");
     }
 
-    @Override
-    public boolean joinedActivity(String activityId) {
-        List<Activity> activitiesJoined = getHibernateTemplate().find("from Link where activityId = ?", activityId);
-        if (activitiesJoined == null || activitiesJoined.size() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+//    @Override
+//    public boolean joinedActivity(String activityId) {
+//        return true;
+//    }
 }

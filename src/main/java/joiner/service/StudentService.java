@@ -12,5 +12,5 @@ public interface StudentService {
     public Student findStudentById(String studentId);
     public List<Student> findStudentsByName(String studentName);
     public List<Student> listAll();
-    public boolean joinedActivity(String activityId);
+//    public boolean joinedActivity(String activityId);
 }

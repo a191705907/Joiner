@@ -57,7 +57,39 @@ public class Activity {
 
     public String getDescription(){return this.description;}
 
-    public void setIsPost(boolean isPost){this.isPost = isPost;}
+    public boolean isPost() {
+        return isPost;
+    }
 
-    public boolean getIsPost(){return this.isPost;}
+    public void setPost(boolean isPost) {
+        this.isPost = isPost;
+    }
+
+    // below are add for link of activity and student
+//    public boolean equals(Object o) {
+//        if (this == o) {
+//            return true;
+//        } else if (!(o instanceof Activity)) {
+//            return false;
+//        } else {
+//            final Activity activity = (Activity) o;
+//            if (this.activityId != null ?
+//                !this.activityId.equals(activity.getActivityId()) :
+//                activity.getActivityId() != null) {
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        }
+//    }
+//
+//    Set<Student> students = new HashSet<Student>();
+//
+//    public Set<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(Set<Student> students) {
+//        this.students = students;
+//    }
 }

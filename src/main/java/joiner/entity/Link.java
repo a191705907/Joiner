@@ -1,9 +1,11 @@
 package joiner.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by distanceN on 2015/6/14.
  */
-public class Link {
+public class Link implements Serializable {
     String studentId;
     String activityId;
 
@@ -23,7 +25,4 @@ public class Link {
         this.activityId = activityId;
     }
 
-    public String getLinkId() {
-        return studentId + activityId;
-    }
 }

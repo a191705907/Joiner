@@ -19,7 +19,7 @@
 
         <action name="student_login" class="joiner.action.StudentLoginAction">
             <result name="input">/forStudentLogin.html</result>
-            <result name="error">/error.jsp</result>
+            <result name="error">/errorForLogin.jsp</result>
             <result name="success">/welcomeStudent.jsp</result>
         </action>
         <action name="organizer_login" class="joiner.action.OrganizerLoginAction">
@@ -43,6 +43,11 @@
 
         <action name="activity_detail_stu" class="joiner.action.ActivityDetailForStuAction">
             <result name="success">/activityDetailForStu.jsp</result>
+        </action>
+
+        <action name="join_activity" class="joiner.action.JoinAction">
+            <result name="success">/successForJoin.jsp</result>
+            <result name="error">/errorForJoin.jsp</result>
         </action>
     </package>
 </struts>

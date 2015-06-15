@@ -15,6 +15,8 @@
     <s:if test="#session.student!=null">
         <h5>
             <s:property value="#session.student.studentId"/>
+        </h5>
+        <h5>
             <s:property value="#session.student.studentName"/>
         </h5>
     </s:if>
@@ -27,14 +29,18 @@
         <h6>description: <s:property value="#session.activity.description" /></h6>
     </s:if>
 
-    <s:if test="#session.joinedByStudent==1">
-        <button>You have joined it</button>
+    <s:if test="#session.link.activityId!=''">
+        <button type="button">You have joined it</button>
     </s:if>
-    <s:if test="#session.joinedByStudent==0">
+    <s:if test="#session.link.activityId==''">
         <form name="join_activity" method="post" action="join_activity" validate="true">
             <p>
-                <input type="hidden" value=${session.student.studentId} name="student.id">
-                <input type="hidden" value=${session.activity.activityId} name="activity.id>
+                <input type="text" value=${session.student.studentId} name="student.studentId">
+                <input type="text" value=${session.student.studentPassword} name="student.studentPassword">
+                <input type="text" value=${session.activity.activityId} name="activity.activityId>
+            </p>
+            <button type="button">no use button</button>
+            <p>
                 <input type="Submit" value="Join it">
             </p>
         </form>

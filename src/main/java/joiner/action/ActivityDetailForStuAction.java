@@ -3,11 +3,15 @@ package joiner.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import joiner.entity.Activity;
+import joiner.entity.Link;
 import joiner.entity.Student;
 import joiner.service.ActivityService;
+import joiner.service.LinkService;
 import joiner.service.StudentService;
 import joiner.util.InitApplicationContext;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 /**
  * Created by distanceN on 2015/6/14.
@@ -17,11 +21,13 @@ public class ActivityDetailForStuAction extends ActionSupport {
     private Activity activity;
     private StudentService studentService;
     private Student student;
+    private LinkService linkService;
     public ActivityDetailForStuAction() {
         System.out.println("ActivityDetailActionForStu constructing");
         ApplicationContext context = InitApplicationContext.getApplicationContext();
         activityService = (ActivityService) context.getBean("activityService");
         studentService = (StudentService) context.getBean("studentService");
+        linkService = (LinkService) context.getBean("linkService");
     }
     @Override
     public String execute() throws Exception {
@@ -40,13 +46,18 @@ public class ActivityDetailForStuAction extends ActionSupport {
         ActionContext.getContext().getSession().put("activity", checkActivity);
         ActionContext.getContext().getSession().put("student", student);
 
-        int joinedByStudent = 0;
-        if (activityService.joinedByStudent(student.getStudentId())) {
-            joinedByStudent = 1;
-        } else {
-            joinedByStudent = 0;
+        Link link = new Link();
+        link.setActivityId("");
+        List<Link> linksWithStudent = linkService.findActivitiesByStudent(student.getStudentId());
+        for (Link l : linksWithStudent) {
+            if (l.getActivityId().equals(activity.getActivityId())) {
+                System.out.println("Link " + l.getActivityId() + " and " + l.getStudentId());
+                link = l;
+                break;
+            }
         }
-        ActionContext.getContext().getSession().put("joinedByStudent", joinedByStudent);
+        ActionContext.getContext().getSession().put("link", link);
+        System.out.println("Link has been put");
 
         return SUCCESS;
     }
@@ -70,6 +81,10 @@ public class ActivityDetailForStuAction extends ActionSupport {
         return student;
     }
 
+    public LinkService getLinkService() {
+        return linkService;
+    }
+
     public void setActivityService(ActivityService activityService) {
         this.activityService = activityService;
     }
@@ -84,5 +99,9 @@ public class ActivityDetailForStuAction extends ActionSupport {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public void setLinkService(LinkService linkService) {
+        this.linkService = linkService;
     }
 }

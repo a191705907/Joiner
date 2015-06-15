@@ -44,8 +44,15 @@ public class ActivityServiceImpl implements ActivityService {
     public List<Activity> findActivitysByOrganizer(String organizerName) {
         return activityDao.findActivitysByOrganizer(organizerName);
     }
-    @Override
-    public boolean joinedByStudent(String studentId) {
-        return activityDao.joinedByStudent(studentId);
-    }
+//    @Override
+//    public boolean joinedByStudent(String studentId) {
+//        return activityDao.joinedByStudent(studentId);
+//    }
+
+
+    // below are add for link of student and activity
+//    @Override
+//    public boolean makeJoin(String studentId, String activityId) {
+//        return activityDao.makeJoin(studentId, activityId);
+//    }
 }
