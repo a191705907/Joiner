@@ -35,11 +35,11 @@
     <s:if test="#session.link.activityId==''">
         <form name="join_activity" method="post" action="join_activity" validate="true">
             <p>
-                <input type="text" value=${session.student.studentId} name="student.studentId">
-                <input type="text" value=${session.student.studentPassword} name="student.studentPassword">
-                <input type="text" value=${session.activity.activityId} name="activity.activityId">
-                <input type="text" value=${session.student.studentId} name="link.studentId">
-                <input type="text" value=${session.activity.activityId} name="link.activityId">
+                <input type="hidden" value=${session.student.studentId} name="student.studentId">
+                <input type="hidden" value=${session.student.studentPassword} name="student.studentPassword">
+                <input type="hidden" value=${session.activity.activityId} name="activity.activityId">
+                <input type="hidden" value=${session.student.studentId} name="link.studentId">
+                <input type="hidden" value=${session.activity.activityId} name="link.activityId">
             </p>
             <p>
                 <input type="Submit" value="Join it">

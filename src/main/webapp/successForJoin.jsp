@@ -14,8 +14,8 @@
 <h2>Success to join the activity!!</h2>
 <form name="student_back" method="post" action="student_login" validate="true">
     <p>
-        <input type="text" value=${session.student.studentId} name="student.studentId">
-        <input type="text" value=${session.student.studentPassword}
+        <input type="hidden" value=${session.student.studentId} name="student.studentId">
+        <input type="hidden" value=${session.student.studentPassword}
                 name="student.studentPassword">
     </p>
     <p>

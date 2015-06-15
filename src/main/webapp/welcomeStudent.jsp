@@ -25,6 +25,9 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     </s:if>
     <form name="search_activity" method="post" action="search_activity" validate="true">
         <p>activity name:
+            <input type="text" value=${student.studentId} name="student.studentId"/>
+            <input type="text" value=${student.studentName} name="student.studentName"/>
+            <input type="text" value=${student.studentPassword} name="student.studentPassword"/>
             <input type="text" name="activity.activityName">
             <input type="Submit" value="search activity by name">
         </p>
@@ -39,10 +42,10 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                     <h4>time: <s:property value="#activity.time" /></h4>
                     <h4>place: <s:property value="#activity.place" /></h4>
                     <%--REMEMBER: here text should be hidden at last--%>
-                    <input type="text" value=${activity.activityId} name="activity.activityId"/>
-                    <input type="text" value=${student.studentId} name="student.studentId"/>
-                    <input type="text" value=${student.studentName} name="student.studentName"/>
-                    <input type="text" value=${student.studentPassword} name="student.studentPassword"/>
+                    <input type="hidden" value=${activity.activityId} name="activity.activityId"/>
+                    <input type="hidden" value=${student.studentId} name="student.studentId"/>
+                    <input type="hidden" value=${student.studentName} name="student.studentName"/>
+                    <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
                     <input type="Submit" value="see detail for activity"/>
                 </p>
             </form>

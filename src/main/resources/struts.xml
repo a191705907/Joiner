@@ -30,7 +30,7 @@
         
         <action name="search_activity" class="joiner.action.SearchActivityAction">
             <result name="input">/index.html</result>
-            <result name="success">/activityInformation.jsp</result>
+            <result name="success">/searchResult.jsp</result>
         </action>
 
         <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
