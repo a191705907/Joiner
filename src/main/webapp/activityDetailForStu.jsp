@@ -8,43 +8,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head>
-    <title>single activity detail</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Activity Description</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/activityAandD.css"/>
 </head>
 <body>
-    <s:if test="#session.student!=null">
-        <h5>
-            <s:property value="#session.student.studentId"/>
-        </h5>
-        <h5>
-            <s:property value="#session.student.studentName"/>
-        </h5>
-    </s:if>
-    <s:if test="#session.activity!=null">
-        <h2> <s:property value="#session.activity.activityName"/></h2>
-        <h4> <s:property value="#session.activity.activityId" /></h4>
-        <h4> <s:property value="#session.activity.organizerName" /></h4>
-        <h4>time: <s:property value="#session.activity.time" /></h4>
-        <h4>place: <s:property value="#session.activity.place" /></h4>
-        <h6>description: <s:property value="#session.activity.description" /></h6>
-    </s:if>
-
-    <s:if test="#session.link.activityId!=''">
-        <button type="button">You have joined it</button>
-    </s:if>
-    <s:if test="#session.link.activityId==''">
-        <form name="join_activity" method="post" action="join_activity" validate="true">
-            <p>
-                <input type="hidden" value=${session.student.studentId} name="student.studentId">
-                <input type="hidden" value=${session.student.studentPassword} name="student.studentPassword">
-                <input type="hidden" value=${session.activity.activityId} name="activity.activityId">
-                <input type="hidden" value=${session.student.studentId} name="link.studentId">
-                <input type="hidden" value=${session.activity.activityId} name="link.activityId">
-            </p>
-            <p>
-                <input type="Submit" value="Join it">
-            </p>
-        </form>
-    </s:if>
+<div class="heading">
+    <div class="back_img">
+        <a href="welcomeStudent.jsp"><span class="glyphicon glyphicon-menu-left"></span></a>
+    </div>
+    <div class="username" id="username">
+        <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>
+    </div>
+</div>
+<div class="main_body">
+    <div class="activity_title">
+        <s:property value="#session.activity.activityName"/>
+    </div>
+    <div class="release_time">
+        <p><s:property value="#session.activity.organizerName" />
+            <s:property value="#session.activity.time"/> <s:property value="#session.activity.place"/>
+        </p>
+    </div>
+    <div class="relative_img">
+        <span class="glyphicon glyphicon-picture"></span>
+    </div>
+    <div class="description">
+        <s:property value="#session.activity.description"/>
+    </div>
+</div>
+<s:if test="#session.link.activityId!=''">
+    <div class="footing">
+        <div class="submit_img">
+            <span class="glyphicon glyphicon-ok-sign"></span>
+        </div>
+        <p>Joined!</p>
+    </div>
+</s:if>
+<s:if test="#session.link.activityId==''">
+<form name="join_activity" method="post" action="join_activity" validate="true">
+    <input type="hidden" value=${session.student.studentId} name="student.studentId">
+    <input type="hidden" value=${session.student.studentPassword} name="student.studentPassword">
+    <input type="hidden" value=${session.activity.activityId} name="activity.activityId">
+    <input type="hidden" value=${session.student.studentId} name="link.studentId">
+    <input type="hidden" value=${session.activity.activityId} name="link.activityId">
+    <div class="footing">
+        <button type="Submit" aria-label="Left Align">
+        <div class="submit_img">
+            <%--<button class="btn" type="Submit" aria-label="Left Align">--%>
+                <%--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>--%>
+            <%--</button>--%>
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </div>
+        </button>
+    </div>
+</form>
+</s:if>
 </body>
 </html>

@@ -42,6 +42,7 @@ public class ActivityDetailForStuAction extends ActionSupport {
                     + activity.getActivityId());
             return ERROR;
         }
+        System.out.println(checkActivity.getDescription());
         System.out.println("SUCCESS");
         ActionContext.getContext().getSession().put("activity", checkActivity);
         ActionContext.getContext().getSession().put("student", student);

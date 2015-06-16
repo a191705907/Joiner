@@ -10,32 +10,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <title>search result</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Search result</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/activityList.css"/>
 </head>
 <body>
 <s:if test="#session.student!=null">
-    <h2><s:property value="#session.student.studentName"/></h2>
-    <h3><s:property value="#session.student.studentId" /></h3>
+    <form name="search_activity" method="post" action="search_activity" validate="true">
+        <div class="heading">
+            <div class="back_img">
+                <a href="welcomeStudent.html"><span class="glyphicon glyphicon-menu-left"></span></a>
+            </div>
+            <div class="username" id="username">
+                <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>
+            </div>
+            <div class="search_img" type="Submit">
+                <button class="btn" type="Submit" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="input_text">
+                <input type="hidden" value=${student.studentId} name="student.studentId"/>
+                <input type="hidden" value=${student.studentName} name="student.studentName"/>
+                <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
+                <input type="text" name="activity.activityName">
+            </div>
+        </div>
+    </form>
 </s:if>
-<s:if test="#session.activityList1!=null">
-    <s:iterator value="#session.activityList1" id="activity1">
-        <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
-            <p>
-            <h4>activity name: <s:property value="#activity1.activityName"/></h4>
-            <h4>activity id: <s:property value="#activity1.activityId"/> </h4>
-            <h4>organizer: <s:property value="#activity1.organizerName"/></h4>
-            <h4>time: <s:property value="#activity1.time" /></h4>
-            <h4>place: <s:property value="#activity1.place" /></h4>
-            <%--REMEMBER: here text should be hidden at last--%>
-            <input type="text" value=${activity1.activityId} name="activity.activityId"/>
-            <input type="text" value=${student.studentId} name="student.studentId"/>
-            <input type="text" value=${student.studentName} name="student.studentName"/>
-            <input type="text" value=${student.studentPassword} name="student.studentPassword"/>
-            <input type="Submit" value="see detail for activity"/>
-            </p>
-        </form>
-    </s:iterator>
-</s:if>
+<div class="main_body">
+    <s:if test="#session.activityList1!=null">
+        <s:iterator value="#session.activityList1" id="activity1">
+            <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
+                <div class="list">
+                    <div class="head_img">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                        <input type="hidden" value=${activity1.activityId} name="activity.activityId"/>
+                        <input type="hidden" value=${student.studentId} name="student.studentId"/>
+                        <input type="hidden" value=${student.studentName} name="student.studentName"/>
+                        <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
+                    <div class="activity_title">
+                        <button class="btn" type="Submit" font="100px">
+                            <a>${activity1.activityName}</a>
+                        </button>
+                    </div>
+                    <div class="release_time">
+                        <p>${activity1.organizerName} ${activity1.time}</p>
+                    </div>
+                </div>
+            </form>
+        </s:iterator>
+    </s:if>
+
+</div>
 </body>
 </html>
