@@ -57,7 +57,12 @@ public class Activity {
 
     public String getDescription(){return this.description;}
 
-    public void setIsPost(boolean isPost){this.isPost = isPost;}
+    public boolean isPost() {
+        return isPost;
+    }
 
-    public boolean getIsPost(){return this.isPost;}
+    public void setPost(boolean isPost) {
+        this.isPost = isPost;
+    }
+
 }

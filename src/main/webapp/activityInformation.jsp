@@ -95,9 +95,9 @@
             <div class="img">
                 <img src="">
             </div>
-            <div type="button" class="brn btn-1" type="button">
-                Create
-            </div>
+            <form name="Redict" action="createActivity.jsp" method="get">
+                <input type="submit" class="brn btn-1" value="Create">
+            </form>
             <div class="cut-line"></div>
             <s:if test="#session.activityList!=null">
                 <s:iterator value="#session.activityList" id="activity1">

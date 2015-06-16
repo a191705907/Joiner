@@ -33,6 +33,7 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
                 getHibernateTemplate().save(activity);
                 System.out.println("Activity saved ok!");
             } catch (DataAccessException e) {
+                e.printStackTrace();
                 System.out.println("Sorry, activity can't be added.");
                 return false;
             }
