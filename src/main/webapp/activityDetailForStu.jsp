@@ -55,12 +55,13 @@
     <input type="hidden" value=${session.student.studentId} name="link.studentId">
     <input type="hidden" value=${session.activity.activityId} name="link.activityId">
     <div class="footing">
-        <button type="Submit" aria-label="Left Align">
+        <button type="Submit" aria-label="Left Align" class="apply_btn">
         <div class="submit_img">
             <%--<button class="btn" type="Submit" aria-label="Left Align">--%>
                 <%--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>--%>
             <%--</button>--%>
             <span class="glyphicon glyphicon-plus-sign"></span>
+                <p>Join</p>
         </div>
         </button>
     </div>
