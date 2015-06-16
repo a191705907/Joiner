@@ -10,33 +10,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <title>My Joins</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Joined activities</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/activityList.css"/>
 </head>
 <body>
 <s:if test="#session.student!=null">
-    <h2><s:property value="#session.student.studentName"/></h2>
-    <h3><s:property value="#session.student.studentId" /></h3>
+    <form name="student_back" method="post" action="student_login" validate="true">
+        <p>
+            <input type="text" value=${session.student.studentId} name="student.studentId">
+            <input type="text" value=${session.student.studentPassword}
+                    name="student.studentPassword">
+        </p>
+        <div class="heading">
+            <div class="back_img">
+                <button class="btn" type="Submit" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="username" id="username">
+                <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>
+            </div>
+        </div>
+    </form>
 </s:if>
-<s:if test="#session.activityList2!=null">
-    <s:iterator value="#session.activityList2" id="activity2">
-        <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
-            <p>
-            <h4>activity name: <s:property value="#activity2.activityName"/></h4>
-            <h4>activity id: <s:property value="#activity2.activityId"/> </h4>
-            <h4>organizer: <s:property value="#activity2.organizerName"/></h4>
-            <h4>time: <s:property value="#activity2.time" /></h4>
-            <h4>place: <s:property value="#activity2.place" /></h4>
-                <%--REMEMBER: here text should be hidden at last--%>
-            <input type="text" value=${activity2.activityId} name="activity.activityId"/>
-            <input type="text" value=${student.studentId} name="student.studentId"/>
-            <input type="text" value=${student.studentName} name="student.studentName"/>
-            <input type="text" value=${student.studentPassword} name="student.studentPassword"/>
-            <input type="Submit" value="see detail for activity"/>
-            </p>
-        </form>
-    </s:iterator>
-</s:if>
+<div class="main_body">
+    <s:if test="#session.activityList2!=null">
+        <s:iterator value="#session.activityList2" id="activity2">
+            <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
+                <div class="list">
+                    <div class="head_img">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                        <input type="hidden" value=${activity2.activityId} name="activity.activityId"/>
+                        <input type="hidden" value=${student.studentId} name="student.studentId"/>
+                        <input type="hidden" value=${student.studentName} name="student.studentName"/>
+                        <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
+                    <div class="activity_title">
+                        <button class="btn" type="Submit" font="100px">
+                            <a>${activity2.activityName}</a>
+                        </button>
+                    </div>
+                    <div class="release_time">
+                        <p>${activity2.organizerName} ${activity2.time}</p>
+                    </div>
+                </div>
+            </form>
+        </s:iterator>
+    </s:if>
+
+</div>
 </body>
 
 </html>
