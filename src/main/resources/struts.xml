@@ -30,7 +30,7 @@
         <action name = "create_activity" class = "joiner.action.CreateActivityAction">
             <result name="input">/create_event.jsp</result>
             <result name="error">/error.jsp</result>
-            <result name="success">/index.html</result>
+            <result name="success">/create_event.jsp</result>
         </action>
         <action name="search_activity" class="joiner.action.SearchActivityAction">
             <result name="input">/index.html</result>

@@ -1,10 +1,13 @@
 package joiner.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import joiner.entity.Activity;
 import joiner.service.ActivityService;
 import joiner.util.InitApplicationContext;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 /**
  * Created by Feizhou on 2015/6/14.
@@ -30,6 +33,8 @@ public class CreateActivityAction extends ActionSupport{
             System.out.println("Create Error");
             return INPUT;
         }
+        List<Activity> activityList = activityService.findActivitysByOrganizer(activity.getOrganizerName());
+        ActionContext.getContext().getSession().put("activityList" , activityList);
         return SUCCESS;
     }
 

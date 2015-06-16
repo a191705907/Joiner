@@ -12,7 +12,7 @@
         <property name="time" column="activity_time"></property>
         <property name="place" column="activity_place"></property>
         <property name="description" column="activity_discript"></property>
-        <property name="post" type="yes_no" column="activity_isPost"></property>
+        <property name="post" type="boolean" column="activity_isPost"></property>
         <!--<set-->
                 <!--name="students"-->
                 <!--table="student_activity"-->

@@ -1,24 +1,59 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zl
-  Date: 1/23/2015
-  Time: 9:15 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=gb2312" %>
+<%@ page import="java.util.*"%>
+
+
 <html>
-<head>
-    <title>Log in</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="index.css" rel="stylesheet">
 </head>
+
 <body>
-<s:form action="login" validate="true">
-    <s:textfield label="User Id" name="student.studentId" required="true"/>
-    <s:password label="Password" name="student.studentPassword" required="true"/>
-    <s:property/>
-    <s:submit value="login"/>
-</s:form>
+<div>
+
+
+    <div class="container">
+        <div class="left">
+            <div class="img">
+                <img src="">
+            </div>
+            <div type="button" class="btn btn-1" type="button">
+                Create
+            </div>
+            <div class="cut-line"></div>
+
+            <div class="items">
+                <% for (int i = 1; i < 9; i ++) { %>
+                <div class="item" onclick="location.href='#'">Item<%out.print(i);%></div>
+                <% } %>
+            </div>
+
+
+        </div>
+        <div class="right">
+            <div class="text-create">Create Event</div>
+            <div class="line-right-1"></div>
+            <div class="event-name">
+                <p>Event Name:</p><input type="text" style="width: 800px;">
+            </div>
+            <div class="event-name">
+                <p>Event Time:</p>
+                <input type="text" style="width: 800px;">
+            </div>
+            <div class="event-name">
+                <p>Event detial:</p>
+                <textarea type="text" style="width: 800px; height: 100px; "> </textarea>
+            </div>
+
+            <div class="line-right-2"></div>
+
+            <div class="btn-cancel" onclick="location.href='#' ">Cancel</div>
+            <div class="btn-send" onclick="location.href='#' ">Save</div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
