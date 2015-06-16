@@ -21,7 +21,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <form name="search_activity" method="post" action="search_activity" validate="true">
         <div class="heading">
             <div class="back_img">
-                <a href="welcomeStudent.html"><span class="glyphicon glyphicon-menu-left"></span></a>
+                <a href="welcomeStudent.jsp"><span class="glyphicon glyphicon-menu-left"></span></a>
             </div>
             <div class="username" id="username">
                 <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>

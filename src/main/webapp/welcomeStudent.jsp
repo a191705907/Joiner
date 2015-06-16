@@ -21,7 +21,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <form name="search_activity" method="post" action="search_activity" validate="true">
         <div class="heading">
             <div class="back_img">
-                <a href="forStudentLogin.html"><span class="glyphicon glyphicon-menu-left"></span></a>
+                <a href="loginForStudent.html"><span class="glyphicon glyphicon-menu-left"></span></a>
             </div>
             <div class="username" id="username">
                 <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>
@@ -51,7 +51,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <input type="hidden" value=${student.studentPassword} name="student1.studentPassword"/>
         <div class="activity_title">
             <button class="btn" type="Submit" font="100px">
-                <a>My Joins</a>
+                <a>See My Joins</a>
             </button>
         </div>
         <div class="release_time">

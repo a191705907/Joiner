@@ -2,31 +2,22 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>App Entry</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
 <body>
-<form name="I_am_student" method="post" action="I_am_student" validate="true">
-    <p>
-        <input type="Submit" value="Login as student">
-    </p>
-</form>
-<form name="I_am_organizer" method="post" action="I_am_organizer" validate="true">
-    <p>
-        <input type="Submit" value="Login as organizer">
-    </p>
-</form>
-<form name="search_activity" method="post" action="search_activity" validate="true">
-    <p>activity name:
-        <input type="text" name="activity.activityName">
-    </p>
-    <p>
-        <input type="Submit" value="search activity by name">
-    </p>
-</form>
-<form name="scan_activities" method="post" action="scan_activities" validate="true">
-    <p>
-        <input type="Submit" value="list all activities">
-    </p>
-</form>
+    <div class="heading">
+        <div class="username" id="username">
+            <p>App Entry</p>
+        </div>
+    </div>
+    <div class="main_body">
+        <a href="loginForStudent.html"><div class="student_entry">Student Entry</div></a>
+        <a href="loginForOrganizer.html"><div class="group_entry">Organizer Entry</div></a>
+    </div>
+    <div class="footing">
+    </div>
 </body>
 </html>

@@ -18,23 +18,14 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 </head>
 <body>
 <s:if test="#session.student!=null">
-    <form name="student_back" method="post" action="student_login" validate="true">
-        <p>
-            <input type="text" value=${session.student.studentId} name="student.studentId">
-            <input type="text" value=${session.student.studentPassword}
-                    name="student.studentPassword">
-        </p>
         <div class="heading">
             <div class="back_img">
-                <button class="btn" type="Submit" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                </button>
+                <a href="welcomeStudent.jsp"><span class="glyphicon glyphicon-menu-left"></span></a>
             </div>
             <div class="username" id="username">
                 <p><s:property value="#session.student.studentName"/> <s:property value="#session.student.studentId" /></p>
             </div>
         </div>
-    </form>
 </s:if>
 <div class="main_body">
     <s:if test="#session.activityList2!=null">
