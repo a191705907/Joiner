@@ -13,20 +13,16 @@
         <property name="place" column="activity_place"></property>
         <property name="description" column="activity_discript"></property>
         <property name="post" type="boolean" column="activity_isPost"></property>
-        <!--<set-->
-                <!--name="students"-->
-                <!--table="student_activity"-->
-                <!--lazy="false"-->
-                <!--cascade="save-update"-->
-                <!-->-->
-            <!--<key-->
-                    <!--column="activity_id"-->
-                    <!-->-->
-            <!--</key>-->
-            <!--<many-to-many-->
-                    <!--class="joiner.entity.Student"-->
-                    <!--column="student_id"-->
-                    <!--outer-join="auto"/>-->
+
+        <!--<set name="students"-->
+             <!--table="student_activity"-->
+             <!--lazy="false"-->
+             <!--cascade="save-update">-->
+        <!--<key column="activity_id"></key>-->
+        <!--<many-to-many-->
+            <!--class="joiner.entity.Student"-->
+            <!--column="student_id"-->
+            <!--outer-join="auto"/>-->
         <!--</set>-->
     </class>
 </hibernate-mapping>
