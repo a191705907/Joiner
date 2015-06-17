@@ -57,7 +57,7 @@ html, body {
 
 .form_info {
     height: 100%;
-    width: 70%;
+    width: 250px;
     background-color: #007fff;
     margin: 0 auto;
     font-size: 2em;
@@ -70,19 +70,9 @@ html, body {
     padding: 4em 8px;
 }
 
-.form_info input[type="text"], input[type="password"] {
-    display: table-cell;
-    color: #000000;
-    margin-bottom: 40px;
-    border-radius: 10px;
-}
-
-.form_info input[type="submit"], input[type="reset"] {
-    display: table-cell;
-    width: 20%;
-    color: #2e6da4;
-    border-radius: 10px;
-    margin-right: 4em;
+.form_info button {
+    width: 97%;
+    color: #007fff;
 }
 
 .footing {
@@ -97,7 +87,7 @@ html, body {
 
 @media screen and (max-device-width: 640px) {
     .main_body {
-        width: 80%;
+        width: 100%;
         padding-top: 10em;
         padding-bottom: 10em;
     }
@@ -130,7 +120,7 @@ html, body {
     }
 
     .form_info input[type="submit"], input[type="reset"] {
-        width: 5%;
+        width: 20%;
         color: #2e6da4;
         margin: 0;
         border-radius: 10px;

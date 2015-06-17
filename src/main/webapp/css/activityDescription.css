@@ -15,3 +15,8 @@
     font-size: 85px;
     color: #007fff;
 }
+
+.submit_img button {
+    background: #007fff;
+    color: #ffffff;
+}

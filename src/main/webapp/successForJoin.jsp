@@ -17,15 +17,21 @@
 <body>
 <div class="main_body">
     <form class="form_info" name="student_back" method="post" action="student_login" validate="true">
-        <p>Success in Join!!</p>
+        <div class="input-group">
+            <span class="input-group-addon">Succeed Join!!!</span>
+        </div>
+        <input type="hidden" value=${session.student.studentId} name="student.studentId">
+        <input type="hidden" value=${session.student.studentPassword}
+                name="student.studentPassword">
         <p>
-            <input type="hidden" value=${session.student.studentId} name="student.studentId">
-            <input type="hidden" value=${session.student.studentPassword}
-                    name="student.studentPassword">
+
+
+        </p>
+        <p style="text-align:center;">
+            <button class="btn" type="submit">OK</button>
         </p>
         <p>
-            <input type="Submit" value="ok">
-        </p>
+
     </form>
 </div>
 <%--<h2>Success to join the activity!!</h2>--%>

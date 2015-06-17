@@ -10,36 +10,26 @@
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
-        <action name="I_am_student" class="joiner.action.ToLoginAsStudentAction">
-            <result name="success">/forStudentLogin.html</result>
-        </action>
-        <action name="I_am_organizer" class="joiner.action.ToLoginAsOrganizerAction">
-            <result name="success">/forOrganizerLogin.html</result>
-        </action>
 
         <action name="student_login" class="joiner.action.StudentLoginAction">
-            <result name="input">/forStudentLogin.html</result>
+            <result name="input">/loginForStudent.html</result>
             <result name="error">/errorForLogin.jsp</result>
             <result name="success">/welcomeStudent.jsp</result>
         </action>
         <action name="organizer_login" class="joiner.action.OrganizerLoginAction">
-            <result name="input">/forOrganizerLogin.html</result>
-            <result name="error">/error.jsp</result>
+            <result name="input">/loginForOrganizer.html</result>
+            <result name="error">/errorForLogin.jsp</result>
             <result name="success">/welcomeOrganizer.jsp</result>
         </action>
         
         <action name="search_activity" class="joiner.action.SearchActivityAction">
-            <result name="input">/index.html</result>
+            <result name="input">/welcomeStudent.html</result>
             <result name="success">/searchResult.jsp</result>
         </action>
 
         <action name="scan_activities" class="joiner.action.ScanActivitiesAction">
             <result name="success">/scanActivities.jsp</result>
         </action>
-
-        <!--<action name="activity_detail" class="joiner.action.ActivityDetailAction">-->
-            <!--<result name="success">/activityDetail.jsp</result>-->
-        <!--</action>-->
 
         <action name="activity_detail_stu" class="joiner.action.ActivityDetailForStuAction">
             <result name="success">/activityDetailForStu.jsp</result>

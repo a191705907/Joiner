@@ -41,10 +41,15 @@
 </div>
 <s:if test="#session.link.activityId!=''">
     <div class="footing">
-        <div class="submit_img">
-            <span class="glyphicon glyphicon-ok-sign"></span>
-        </div>
-        <p>Joined!</p>
+        <button type="Submit" aria-label="Left Align" class="btn-block">
+            <div class="submit_img" >
+                    <%--<button class="btn" type="Submit" aria-label="Left Align">--%>
+                    <%--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>--%>
+                    <%--</button>--%>
+                <span class="glyphicon glyphicon-ok-sign"></span>
+                <p>Joined!</p>
+            </div>
+        </button>
     </div>
 </s:if>
 <s:if test="#session.link.activityId==''">
@@ -55,14 +60,14 @@
     <input type="hidden" value=${session.student.studentId} name="link.studentId">
     <input type="hidden" value=${session.activity.activityId} name="link.activityId">
     <div class="footing">
-        <button type="Submit" aria-label="Left Align" class="apply_btn">
-        <div class="submit_img">
-            <%--<button class="btn" type="Submit" aria-label="Left Align">--%>
-                <%--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>--%>
-            <%--</button>--%>
-            <span class="glyphicon glyphicon-plus-sign"></span>
+        <button type="Submit" aria-label="Left Align" class="btn-block">
+            <div class="submit_img">
+                        <%--<button class="btn" type="Submit" aria-label="Left Align">--%>
+                        <%--<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>--%>
+                        <%--</button>--%>
+                <span class="glyphicon glyphicon-plus-sign"></span>
                 <p>Join</p>
-        </div>
+            </div>
         </button>
     </div>
 </form>

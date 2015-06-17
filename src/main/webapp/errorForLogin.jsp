@@ -7,11 +7,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-  <title></title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Login Failed</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
 </head>
 <body>
-<h2>Error</h2>
-<h4>Sorry! Id illegal or password not correct.</h4>
+<div class="main_body">
+    <div class="form_info">
+        <div class="input-group">
+            <span class="input-group-addon">Sorry! Id illegal or password incorrect.</span>
+        </div>
+    </div>
+</div>
 </body>
 </html>
