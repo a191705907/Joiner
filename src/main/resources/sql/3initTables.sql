@@ -16,6 +16,12 @@ VALUES ('class_study', 'class_dmt'),
        ('class_party', 'class_dmt'),
        ('class_party', 'class3');
 
+INSERT INTO activity
+(activity_name, organizer_name, activity_time, activity_place, activity_discript)
+VALUES
+('class travelling', 'class3', '2016-06-14', 'America', 'The whole class travel to America'),
+('class film', 'class3', 'xxxx-xx-xx', '', 'The whole class watch movie together');
+
 INSERT INTO student_activity (activity_id, student_id)
 VALUES (1, 12330129),
        (1, 12330128),
