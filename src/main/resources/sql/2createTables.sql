@@ -24,8 +24,8 @@ CREATE TABLE activity(
   activity_id int(8) not null auto_increment,
   activity_name varchar(45) not null,
   organizer_name varchar(45) not null,
-  activity_time varchar(10),
-  activity_place varchar(10),
+  activity_time varchar(50),
+  activity_place varchar(50),
   activity_discript varchar(500),
   activity_isPost bool not null DEFAULT TRUE,
   primary key(activity_id)

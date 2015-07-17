@@ -19,7 +19,7 @@
         <action name="organizer_login" class="joiner.action.OrganizerLoginAction">
             <result name="input">/loginForOrganizer.html</result>
             <result name="error">/error.jsp</result>
-            <result name="success">/welcomeOrganizer.jsp</result>
+            <result name="success">/create_event.jsp</result>
         </action>
         <action name = "create_activity" class = "joiner.action.CreateActivityAction">
             <result name="input">/create_event.jsp</result>
@@ -27,7 +27,7 @@
             <result name="success">/create_event.jsp</result>
         </action>
         <action name="search_activity" class="joiner.action.SearchActivityAction">
-            <result name="input">/welcomeStudent.html</result>
+            <result name="input">/welcomeStudent.jsp</result>
             <result name="success">/searchResult.jsp</result>
         </action>
 

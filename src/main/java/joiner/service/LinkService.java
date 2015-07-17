@@ -11,4 +11,5 @@ public interface LinkService {
     public List<Link> listAll();
     public List<Link> findStudentsByActivity(String activityId);
     public List<Link> findActivitiesByStudent(String studentId);
+    public boolean makeJoin(Link link);
 }

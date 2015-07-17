@@ -27,6 +27,11 @@ public class LinkServiceImpl implements LinkService{
         return linkDao.findActivitiesByStudent(studentId);
     }
 
+    @Override
+    public boolean makeJoin(Link link) {
+        return linkDao.makeJoin(link);
+    }
+
     public void setLinkDao(LinkDao linkDao) {
         this.linkDao = linkDao;
     }

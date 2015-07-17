@@ -48,10 +48,10 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                     <div class="head_img">
                         <span class="glyphicon glyphicon-user"></span>
                     </div>
-                        <input type="hidden" value=${activity1.activityId} name="activity.activityId"/>
-                        <input type="hidden" value=${student.studentId} name="student.studentId"/>
-                        <input type="hidden" value=${student.studentName} name="student.studentName"/>
-                        <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
+                    <input type="hidden" value=${activity1.activityId} name="activity.activityId"/>
+                    <input type="hidden" value=${student.studentId} name="student.studentId"/>
+                    <input type="hidden" value=${student.studentName} name="student.studentName"/>
+                    <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
                     <div class="activity_title">
                         <button class="btn" type="Submit" font="100px">
                             <a>${activity1.activityName}</a>

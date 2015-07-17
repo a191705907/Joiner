@@ -28,7 +28,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
             </div>
             <div class="search_img" type="Submit">
                 <button class="btn" type="Submit" aria-label="Left Align">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
             </div>
             <div class="input_text">
@@ -42,44 +42,44 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 </s:if>
 <div class="main_body">
     <form name="see_joined" method="post" action="see_joined" validate="true">
-    <div class="list">
-        <div class="head_img">
-            <span class="glyphicon glyphicon-paperclip"></span>
+        <div class="list">
+            <div class="head_img">
+                <span class="glyphicon glyphicon-paperclip"></span>
+            </div>
+            <input type="hidden" value=${student.studentId} name="student1.studentId"/>
+            <input type="hidden" value=${student.studentName} name="student1.studentName"/>
+            <input type="hidden" value=${student.studentPassword} name="student1.studentPassword"/>
+            <div class="activity_title">
+                <button class="btn" type="Submit" font="100px">
+                    <a>See My Joins</a>
+                </button>
+            </div>
+            <div class="release_time">
+                <p></p>
+            </div>
         </div>
-        <input type="hidden" value=${student.studentId} name="student1.studentId"/>
-        <input type="hidden" value=${student.studentName} name="student1.studentName"/>
-        <input type="hidden" value=${student.studentPassword} name="student1.studentPassword"/>
-        <div class="activity_title">
-            <button class="btn" type="Submit" font="100px">
-                <a>See My Joins</a>
-            </button>
-        </div>
-        <div class="release_time">
-            <p></p>
-        </div>
-    </div>
     </form>
     <s:if test="#session.activityList!=null">
         <s:iterator value="#session.activityList" id="activity">
-        <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
-            <div class="list">
-                <div class="head_img">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
+            <form name="activity_detail_stu" method="post" action="activity_detail_stu" validate="true">
+                <div class="list">
+                    <div class="head_img">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </div>
                     <input type="hidden" value=${activity.activityId} name="activity.activityId"/>
                     <input type="hidden" value=${student.studentId} name="student.studentId"/>
                     <input type="hidden" value=${student.studentName} name="student.studentName"/>
                     <input type="hidden" value=${student.studentPassword} name="student.studentPassword"/>
-                <div class="activity_title">
-                    <button class="btn" type="Submit" font="100px">
-                        <a>${activity.activityName}</a>
-                    </button>
+                    <div class="activity_title">
+                        <button class="btn" type="Submit" font="100px">
+                            <a>${activity.activityName}</a>
+                        </button>
+                    </div>
+                    <div class="release_time">
+                        <p>${activity.organizerName} ${activity.time}</p>
+                    </div>
                 </div>
-                <div class="release_time">
-                    <p>${activity.organizerName} ${activity.time}</p>
-                </div>
-            </div>
-        </form>
+            </form>
         </s:iterator>
     </s:if>
 
